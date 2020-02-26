@@ -9,7 +9,7 @@ namespace ReadShellcode
     {
         static void Main(string[] args)
         {
-            tryShellcodeBase64.txt
+            try
             {
                 String Base64String = File.ReadAllText(@"ShellcodeBase64.txt");
                 byte[] shellcode64 = Convert.FromBase64String(Base64String);
