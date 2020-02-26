@@ -9,5 +9,7 @@ Use CreateThread to run shellcode.
 
 Base64 of the shellcode(msfvenom -p windows/x64/exec CMD=calc.exe EXITFUNC=thread -f csharp)
 
+### ReadShellcode.cs
 
+It will read ShellcodeBase64.txt and launch the shellcode.
 
