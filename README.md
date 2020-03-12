@@ -15,6 +15,8 @@ It will read ShellcodeBase64.txt and launch the shellcode.
 
 ### SafetyKatz.cs
 
+Use to run `sekurlsa::logonpasswords` and `sekurlsa::ekeys` on the minidump file of lsass.exe.
+
 All code from https://github.com/GhostPack/SafetyKatz
 
 I just modified a few lines of code so that it can be compiled by csc.exe.
