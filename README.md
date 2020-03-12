@@ -13,3 +13,17 @@ Base64 of the shellcode(msfvenom -p windows/x64/exec CMD=calc.exe EXITFUNC=threa
 
 It will read ShellcodeBase64.txt and launch the shellcode.
 
+### SafetyKatz.cs
+
+All code from https://github.com/GhostPack/SafetyKatz
+
+I just modified a few lines of code so that it can be compiled by csc.exe.
+
+Eg.
+
+`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe SafetyKatz.cs /unsafe`
+
+or
+
+`C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe SafetyKatz.cs /unsafe`
+
