@@ -6,7 +6,7 @@
 using System;
 using System.IO;
 using System.IO.Compression;
-namespace RunShellcode
+namespace GzipandBase64
 {
     class Program
     {
