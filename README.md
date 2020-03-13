@@ -29,3 +29,23 @@ or
 
 `C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe SafetyKatz.cs /unsafe`
 
+### GzipandBase64.cs
+
+Use to generate the KatzCompressed string in PELoaderofMimikatz.cs
+
+Complie:
+
+`C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe GzipandBase64.cs`
+
+or
+
+`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe GzipandBase64.cs`
+
+### PELoaderofMimikatz.cs
+
+The source file is Casey Smith's PELoader.cs and the version of mimikatz is mimikatz 2.0 alpha (x64) release "Kiwi en C" (Aug 17 2015 00:14:48).
+
+I change it to the new version(mimikatz 2.1.1 (x64) built on Sep 25 2018 15:08:14).
+
+
+
