@@ -1,10 +1,13 @@
+//Source:https://github.com/GhostPack/SafetyKatz
+//Remove some functions of the source code,only used of dumping lsass.exe to the current path.
+
 using System;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.IO;
 using System.Security.Principal;
 
-namespace ConsoleApplication3
+namespace DumpLsass
 {
     class Program
     {
