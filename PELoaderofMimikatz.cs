@@ -1,5 +1,5 @@
 //Update:
-//THe source version of mimikatz is mimikatz 2.0 alpha (x64) release "Kiwi en C" (Aug 17 2015 00:14:48)
+//The source version of mimikatz is mimikatz 2.0 alpha (x64) release "Kiwi en C" (Aug 17 2015 00:14:48)
 //I change it to the new version(mimikatz 2.1.1 (x64) built on Sep 25 2018 15:08:14)
 //Usage:
 //C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /unsafe PELoaderofMimikatz.cs
