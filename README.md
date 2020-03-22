@@ -68,9 +68,17 @@ The source file is Casey Smith's PELoader.cs and the version of mimikatz is mimi
 
 I change it to the new version(mimikatz 2.1.1 (x64) built on Sep 25 2018 15:08:14).
 
+The source code supprot 4.0 or later.
+
+This code supprot 3.5 or later.
+
 Complie:
 
 `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /unsafe PELoaderofMimikatz.cs`
+
+or
+
+`C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe /unsafe PELoaderofMimikatz.cs`
 
 ### DcsyncofMimikatz.cs
 
