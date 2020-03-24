@@ -160,7 +160,29 @@ Usage:
 
 `SharpMimikatz_x64.exe coffee exit`
 
+### SharpPELoaderGenerater.cs
+
+Use to generate SharpPELoader.cs
+
+Modified by 3gstudent
+
+Reference:Casey Smith's PELoader.cs
+
+Usage:
+
+`SharpPELoaderGenerater.exe <exe path>`
+
+Eg.
+
+`SharpPELoaderGenerater.exe mimikatz.exe`
+
+SharpPELoaderGenerater will determine whether the exe is 32-bit or 64-bit and then generate the corresponding code.
+
+More details:
+
+《通过.NET实现内存加载PE文件》
+  
 ---
 
-
+  
 
