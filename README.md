@@ -184,5 +184,27 @@ More details:
   
 ---
 
-  
+ ### AddMachineAccountofDomain.cs
+ 
+Reference:https://github.com/pkb1s/SharpAllowedToAct
+
+This code is juet part of SharpAllowedToAct.
+
+It can be used to add a Machine Account(User:testNew,Password:123456789).
+
+This code can be complied by csc.exe or Visual Studio.
+
+Supprot 3.5 or later.
+
+Complie:
+
+`C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe AddMachineAccountofDomain.cs /r:System.DirectoryServices.dll,System.DirectoryServices.Protocols.dll`
+
+or
+
+`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe AddMachineAccountofDomain.cs /r:System.DirectoryServices.dll,System.DirectoryServices.Protocols.dll`
+ 
+ 
+ 
+ 
 
