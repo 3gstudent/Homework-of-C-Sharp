@@ -188,13 +188,13 @@ More details:
  
 Reference:https://github.com/pkb1s/SharpAllowedToAct
 
-This code is juet part of SharpAllowedToAct.
+This code is just part of SharpAllowedToAct.
 
 It can be used to add a Machine Account(User:testNew,Password:123456789).
 
 This code can be complied by csc.exe or Visual Studio.
 
-Supprot 3.5 or later.
+Supprot .Net 3.5 or later.
 
 Complie:
 
