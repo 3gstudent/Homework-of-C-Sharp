@@ -180,7 +180,7 @@ SharpPELoaderGenerater will determine whether the exe is 32-bit or 64-bit and th
 
 More details:
 
-《通过.NET实现内存加载PE文件》
+[《通过.NET实现内存加载PE文件》](https://3gstudent.github.io/3gstudent.github.io/%E9%80%9A%E8%BF%87.NET%E5%AE%9E%E7%8E%B0%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BDPE%E6%96%87%E4%BB%B6/)
   
 ---
 
