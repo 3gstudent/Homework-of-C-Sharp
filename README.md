@@ -204,6 +204,8 @@ or
 
 `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe AddMachineAccountofDomain.cs /r:System.DirectoryServices.dll,System.DirectoryServices.Protocols.dll`
  
+ ---
+ 
  ### mapi_tool.cs
  
 Use MAPI to manage Outlook.
@@ -240,6 +242,12 @@ Note:
      HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\x.0\Outlook\Security,DWORD:ObjectModelGuard,2
 ```
 
+### Office14-Microsoft.Office.Interop.OutlookMicrosoft.Office.Interop.Outlook.dll
 
+Use for Outlook 2010.
 
+### Office15-Microsoft.Office.Interop.OutlookMicrosoft.Office.Interop.Outlook.dll
 
+Use for Outlook 2013 and Outlook2016.
+
+---
