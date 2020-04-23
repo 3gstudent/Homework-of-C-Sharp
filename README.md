@@ -204,7 +204,42 @@ or
 
 `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe AddMachineAccountofDomain.cs /r:System.DirectoryServices.dll,System.DirectoryServices.Protocols.dll`
  
+ ### mapi_tool.cs
  
+Use MAPI to manage Outlook.
  
- 
+This code can be complied by csc.exe or Visual Studio.
+
+Supprot .Net 3.5 or later.
+
+Complie:
+
+`C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe mapi_tool.cs /r:Microsoft.Office.Interop.Outlook.dll`
+
+or
+
+`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe mapi_tool.cs /r:Microsoft.Office.Interop.Outlook.dll`
+
+```
+Usage:
+     mapi_tool.exe GetAllFolders
+     mapi_tool.exe GetConfig
+     mapi_tool.exe ListMail <folder>
+     mapi_tool.exe ListUnreadMail <folder>
+Ex command:
+     mapi_tool.exe GetConfigEx
+     mapi_tool.exe GetContactsEx
+     mapi_tool.exe GetGlobalAddressEx  
+     mapi_tool.exe ListMailEx <folder>
+     mapi_tool.exe ListUnreadMailEx <folder>
+     mapi_tool.exe SaveAttachment <folder> <EntryID>  
+     <folder>:Inbox/Drafts/SentItems/DeletedItems/Outlook/JunkEmail
+Note:
+     When the antivirus software is inactive or out-of-date,running Ex command will pop up a Outlook security prompt.
+     You can modify the registry to turn off the Outlook security prompt.
+     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\x.0\Outlook\Security,DWORD:ObjectModelGuard,2
+```
+
+
+
 
