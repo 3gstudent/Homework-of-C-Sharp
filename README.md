@@ -248,6 +248,6 @@ Use for Outlook 2010.
 
 ### Office15-Microsoft.Office.Interop.OutlookMicrosoft.Office.Interop.Outlook.dll
 
-Use for Outlook 2013 and Outlook2016.
+Use for Outlook 2013.
 
 ---
