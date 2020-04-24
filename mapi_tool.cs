@@ -230,6 +230,7 @@ namespace MAPI_TOOL
 
         private static void GetConfig(Microsoft.Office.Interop.Outlook.NameSpace ns,String mode)
         {
+            //Reference:https://github.com/n1nj4sec/pupy/blob/unstable/pupy/modules/outlook.py
             Console.WriteLine("[*] Try to get config");
             Console.WriteLine();
             Object CurrentProfileName = ns.GetType().InvokeMember("CurrentProfileName",System.Reflection.BindingFlags.GetProperty,null,ns,null);
