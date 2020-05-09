@@ -251,3 +251,24 @@ Use for Outlook 2010.
 Use for Outlook 2013.
 
 ---
+
+### BrailleToASCII.cs
+
+Use to translate Braille Patterns to ASCII characters.
+
+Support:`1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ),!/-.?;'$`
+
+This code can be complied by csc.exe or Visual Studio.
+
+Supprot .Net 3.5 or later.
+
+Complie:
+
+`C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe BrailleToASCII.cs`
+
+or
+
+`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe BrailleToASCII.cs`
+
+
+
