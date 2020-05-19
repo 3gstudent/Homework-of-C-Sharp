@@ -270,5 +270,27 @@ or
 
 `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe BrailleToASCII.cs`
 
+---
+
+### SSLCertScan
+
+Use to scan the website SSL certificate.
+
+Reference:https://github.com/ryanries/SharpTLSScan
+
+This code can be complied by csc.exe or Visual Studio.
+
+Supprot .Net 3.5 or later.
+
+Complie:
+
+```
+C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe SSLCertScan.cs
+
+or
+
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe SSLCertScan.cs
+```
+
 
 
