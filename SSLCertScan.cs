@@ -35,10 +35,22 @@ Eg:
             {
                 try
                 {
-                    TcpClient tcpClient = new TcpClient(args[0], Convert.ToInt32(args[1]));
-                    Console.WriteLine("[+] " + args[0] + " responds to TCP on " + args[1] + ".\n");
+                    cpClient tcpClient = new TcpClient(args[0], Convert.ToInt32(args[1]));
+                    Console.WriteLine("[+] " + args[0] + " responds to TCP on " + args[1] + ".\n");                 
                     SslStream sslStream = new SslStream(tcpClient.GetStream(), true, CertificateValidationCallBack);
                     sslStream.AuthenticateAsClient(args[0]);
+                    Console.WriteLine("SChannel negotiated the following:\n");
+                    Console.WriteLine("Protocol Version      : " + sslStream.SslProtocol);
+                    Console.WriteLine("Cipher Algorithm      : " + sslStream.CipherAlgorithm);
+                    Console.WriteLine("Cipher Strength       : " + sslStream.CipherStrength + " bits");
+                    Console.WriteLine("Hash Algorithm        : " + sslStream.HashAlgorithm);
+                    Console.WriteLine("Hash Strength         : " + sslStream.HashStrength + " bits");
+                    Console.Write("Key Exchange Algorithm: ");
+                    if (sslStream.KeyExchangeAlgorithm.ToString() == "44550")
+                        Console.WriteLine("ECDH Ephemeral");
+                    else
+                        Console.WriteLine(sslStream.KeyExchangeAlgorithm);
+                    Console.WriteLine("Key Exchange Strength : " + sslStream.KeyExchangeStrength + " bits");
                 }
                 catch (Exception ex)
                 {
