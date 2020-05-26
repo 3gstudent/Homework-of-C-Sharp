@@ -292,5 +292,50 @@ or
 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe SSLCertScan.cs
 ```
 
+---
+
+### SharpSSHCheck_SSH.NET.cs
+
+Use to check the valid credential of SSH(Based on SSH.NET).
+
+Support password and privatekeyfile.
+
+Reference:https://github.com/sshnet/SSH.NET
+
+Note:
+
+You need to reference Renci.SshNet.dll.
+
+You can download Renci.SshNet.dll from https://github.com/sshnet/SSH.NET/releases/download/2016.1.0/SSH.NET-2016.1.0-bin.zip
+
+Complie:
+
+```
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe SharpSSHCheck_SSH.NET.cs /r:Renci.SshNet.dll
+```
+
+Usage:
+
+```
+      SharpSSHCheck_SSH.NET.exe <SSH ServerIP> <SSH ServerPort> <mode> <user> <password>
+      <mode>:
+      - plaintext
+      - keyfile
+```      
+Eg:
+
+```
+      SharpSSHCheck_SSH.NET.exe 192.168.1.1 22 plaintext root toor
+      SharpSSHCheck_SSH.NET.exe 192.168.1.1 22 keyfile root id_rsa
+```
+
+
+
+
+
+
+
+
+
 
 
