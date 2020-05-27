@@ -329,10 +329,44 @@ Eg:
       SharpSSHCheck_SSH.NET.exe 192.168.1.1 22 keyfile root id_rsa
 ```
 
+### SharpSSHRunCmd_SSH.NET
 
+Remote command execution via SSH(Based on SSH.NET).
 
+Support password and privatekeyfile.
 
+Reference:https://github.com/sshnet/SSH.NET
 
+Note:
+
+You need to reference Renci.SshNet.dll.
+
+You can download Renci.SshNet.dll from https://github.com/sshnet/SSH.NET/releases/download/2016.1.0/SSH.NET-2016.1.0-bin.zip
+
+Complie:
+
+```
+      C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe SharpSSHRunCmd_SSH.NET.cs /r:Renci.SshNet.dll
+```
+
+Usage:
+
+```
+      SharpSSHRunCmd_SSH.NET.exe <SSH ServerIP> <SSH ServerPort> <mode> <user> <password> <cmd>
+      <mode>:
+      - plaintext
+      - keyfile
+If the <cmd> is shell,you will get an interactive shell.
+```
+
+Eg:
+
+```
+      SharpSSHRunCmd_SSH.NET.exe 192.168.1.1 22 plaintext root toor shell
+      SharpSSHRunCmd_SSH.NET.exe 192.168.1.1 22 keyfile root id_rsa ps
+```
+
+---
 
 
 
