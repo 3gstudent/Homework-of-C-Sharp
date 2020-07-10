@@ -368,8 +368,29 @@ Eg:
 
 ---
 
+### ListUserMailbyLDAP
 
+Use to export all users' mail by LDAP.
 
+Modified from https://github.com/Mr-Un1k0d3r/RedTeamCSharpScripts/blob/master/enumerateuser.cs
 
+Complie:
 
+```
+      C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe ListUserMailbyLDAP.cs /r:System.DirectoryServices.dll
+      or
+      C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe ListUserMailbyLDAP.cs /r:System.DirectoryServices.dll
+```
+
+Usage:
+
+```
+      ListUserMailbyLDAP <LDAP ServerIP> <user> <password>
+```
+
+Eg:
+
+```
+      ListUserMailbyLDAP.exe 192.168.1.1 test1 password1
+```
 
