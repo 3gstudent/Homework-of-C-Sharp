@@ -394,3 +394,25 @@ Eg:
       ListUserMailbyLDAP.exe 192.168.1.1 test1 password1
 ```
 
+---
+
+### SqlClient.cs
+
+From:https://github.com/FortyNorthSecurity/SqlClient
+
+Use to query the MSSQL database.
+
+Complie:
+
+```
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe SqlClient.cs
+```
+
+or
+
+```
+C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe SqlClient.cs
+```
+
+---
+
