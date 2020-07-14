@@ -12,7 +12,7 @@ namespace List_passwordneverexpires_user_byLDAP
         {
             string Usage = @"
 List_passwordneverexpires_user_byLDAP
-Use to export all users with  password_never_expires by LDAP.
+Use to export all users with password_never_expires by LDAP.
 Complie:
       C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe List_passwordneverexpires_user_byLDAP.cs /r:System.DirectoryServices.dll
       or
