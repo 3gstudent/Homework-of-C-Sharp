@@ -394,6 +394,34 @@ Eg:
       ListUserMailbyLDAP.exe 192.168.1.1 test1 password1
 ```
 
+
+### List_passwordneverexpires_user_byLDAP
+
+Use to export all users with password_never_expires by LDAP.
+
+
+Complie:
+
+```
+      C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe List_passwordneverexpires_user_byLDAP.cs /r:System.DirectoryServices.dll
+      or
+      C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe List_passwordneverexpires_user_byLDAP.cs /r:System.DirectoryServices.dll
+```
+
+Usage:
+
+```
+      List_passwordneverexpires_user_byLDAP <LDAP ServerIP> <user> <password>
+```
+
+Eg:
+
+```
+      List_passwordneverexpires_user_byLDAP.exe 192.168.1.1 test1 password1
+```
+
+
+
 ---
 
 ### SqlClient.cs
