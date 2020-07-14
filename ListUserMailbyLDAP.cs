@@ -44,9 +44,17 @@ Eg:
                 ds.Filter = q;
                 foreach (SearchResult r in ds.FindAll())
                 {           
-                    Console.WriteLine("[+] {0}:{1}",
-                        r.Properties["samaccountname"].Count > 0 ? r.Properties["samaccountname"][0] : String.Empty,
-                        r.Properties["mail"].Count > 0 ? r.Properties["mail"][0] : String.Empty);            
+                    Console.WriteLine("User:" + r.Properties["samaccountname"][0]);
+                    if(r.Properties["mail"].Count > 0)
+                        Console.WriteLine("Mail:" + r.Properties["mail"][0]);
+                    Console.WriteLine("whencreated:" + r.Properties["whencreated"][0]);
+                    Console.WriteLine("pwdlastset:" + r.Properties["pwdlastset"][0]);
+                    if(r.Properties["accountexpires"][0].ToString()== "9223372036854775807")
+                        Console.WriteLine("accountexpires:Never");
+                    else
+                        Console.WriteLine("accountexpires:" + r.Properties["accountexpires"][0]);                                        
+                    Console.WriteLine("lastlogon:" + r.Properties["lastlogon"][0]);
+                    Console.WriteLine("---");            
                 }
             }
             catch (Exception e)
