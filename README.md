@@ -420,7 +420,28 @@ Eg:
       List_passwordneverexpires_user_byLDAP.exe 192.168.1.1 test1 password1
 ```
 
+### Add_passwordneverexpires_user_byLDAP
 
+Use to set the selected user with password_never_expires by LDAP.
+
+Complie:
+
+```
+      C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe Add_passwordneverexpires_user_byLDAP.cs /r:System.DirectoryServices.dll
+      or
+      C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe Add_passwordneverexpires_user_byLDAP.cs /r:System.DirectoryServices.dll
+```
+
+Usage:
+
+```
+      Add_passwordneverexpires_user_byLDAP <LDAP ServerIP> <user> <password> <target user> 
+```         
+Eg:
+
+```
+      Add_passwordneverexpires_user_byLDAP.exe 192.168.1.1 administrator password1 test1
+```
 
 ---
 
