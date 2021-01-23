@@ -465,6 +465,42 @@ C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe SqlClient.cs
 
 ---
 
+### SharpADFindDemo.cs
+
+Use to export the AD data by LDAP.
+Complie:
+
+```
+      C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe SharpADFindDemo.cs /r:System.DirectoryServices.dll
+      or
+      C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe SharpADFindDemo.cs /r:System.DirectoryServices.dll
+```  
+
+Usage:
+
+```
+      SharpADFindDemo <LDAP ServerIP> <user> <password> <command>
+            
+command:
+- user
+- machine
+- group
+- ou
+- username
+- machinename
+- groupname
+- ouname
+
+```
+
+Note:The maxsize is 1000.
+
+Eg:
+
+```
+      SharpADFindDemo.exe 192.168.1.1 test1 password1 user
+```
 
 
+---
 
