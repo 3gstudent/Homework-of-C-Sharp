@@ -545,3 +545,24 @@ webshellWrite.aspx:
 
 ---
 
+## SharpExchangeDeserializeShell-NoAuth-Fromzcgonvh.cs
+
+Code from https://github.com/zcgonvh/CVE-2020-0688/blob/master/ExchangeCmd.cs
+Use to test the deserializing code execution of Exchange.            
+From read and write permissions of Exchange files to deserializing code execution.
+You should modify the machineKey in %ExchangeInstallPath%\FrontEnd\HttpProxy\<path>\web.config to implement deserializing code execution.
+`<path>`:owa or ecp
+Usage:
+
+```
+    <url> <key> <path>
+```
+
+eg.    
+
+```
+    192.168.1.1 CB2721ABDAF8E9DC516D621D8B8BF13A2C9E8689A25303BF owa
+    mail.test.com CB2721ABDAF8E9DC516D621D8B8BF13A2C9E8689A25303BF ecp    
+```
+
+---
