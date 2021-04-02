@@ -545,6 +545,25 @@ webshellWrite.aspx:
 
 ---
 
+## XamlToViewState.cs
+
+Use to create viewstate from XAML file
+
+Usage:
+
+```
+    <xaml path> <generator> <key>
+```
+eg.      
+
+```
+XamlToViewState.exe Run-Calc.xml 042A94E8 CB2721ABDAF8E9DC516D621D8B8BF13A2C9E8689A25303BF
+```
+
+## SerializeXamlToViewState.cs 
+
+Use to create viewstate from Serialize Xaml data.
+
 ## SharpExchangeDeserializeShell-NoAuth-Fromzcgonvh.cs
 
 Code from https://github.com/zcgonvh/CVE-2020-0688/blob/master/ExchangeCmd.cs
