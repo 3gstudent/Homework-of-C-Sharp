@@ -622,3 +622,25 @@ eg.
 ```
 
 ---
+
+## SharpDCSync_krbtgt.cs
+
+Use DRSR protocol to ask a domain controller to get the krbtgt's hash. 
+
+Reference:https://github.com/vletoux/MakeMeEnterpriseAdmin
+
+## SharpDCSync.cs
+
+use DRSR protocol to ask a domain controller to synchronize a specified entry. 
+
+Reference:https://github.com/vletoux/MakeMeEnterpriseAdmin
+
+---
+
+## SharpTGTImporter.cs
+
+Use to import the TGT
+
+Reference:https://github.com/vletoux/MakeMeEnterpriseAdmin
+
+---
