@@ -644,3 +644,16 @@ Use to import the TGT
 Reference:https://github.com/vletoux/MakeMeEnterpriseAdmin
 
 ---
+## SharpGetUserLoginIPRPC.cs
+
+Use RPC to get the login IP of domain users through the event log.
+
+Support local and remote access
+
+## SharpGetUserLoginIPWMI.cs
+
+Use WMI to get the login IP of domain users through the event log.
+
+Support local and remote access
+
+---
